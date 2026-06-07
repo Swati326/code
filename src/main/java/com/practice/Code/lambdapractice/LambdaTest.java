@@ -6,7 +6,7 @@ public class LambdaTest {
 
     public static void main(String[] args) {
 
-        Add add= (x,y)-> (x+y);
+        Add add= (p,q)-> (p+q);
         System.out.println(add.addition(87,45));
 
     }

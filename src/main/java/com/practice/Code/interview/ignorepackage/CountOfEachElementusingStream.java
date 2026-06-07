@@ -13,6 +13,9 @@ public class CountOfEachElementusingStream {
 
         String s = "nnpu";
 
+        s.chars().mapToObj(c->(char) c).collect(Collectors.groupingBy(s12->s12,Collectors.counting()));
+        Map<Character, Long> collect1 = s.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(s1 -> s1, Collectors.counting()));
+        System.out.println(collect1);
         Map<Character, Long> collect = s.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(c -> c, Collectors.counting()));
         System.out.println(collect);
 

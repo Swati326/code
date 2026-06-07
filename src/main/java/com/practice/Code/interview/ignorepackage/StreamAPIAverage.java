@@ -22,6 +22,8 @@ public class StreamAPIAverage {
         Map<String, Integer> collect = words.stream().collect(Collectors.toMap(s->s, String::length));
         System.out.println(collect);
 
+        words.stream().collect(Collectors.toMap(s->s,String::length));
+
 
         // Group the words by their first letter
         Map<Character, List<String>> collect1 = words.stream().collect(Collectors.groupingBy(w -> w.charAt(0)));
@@ -49,5 +51,7 @@ public class StreamAPIAverage {
                 .collect(Collectors.groupingBy(word -> word, Collectors.counting()));
 
         System.out.println(wordCount);
+
+        Arrays.stream(input.split("")).collect(Collectors.groupingBy(w->w,Collectors.counting()));
     }
 }

@@ -17,6 +17,8 @@ public class SecondHighestUsingStreamAPI {
         List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50, 40);
         Integer first = numbers.stream().sorted(Comparator.comparing(Integer::intValue).reversed()).skip(1).findFirst().orElse(null);
         System.out.println(first);
+        Optional<Integer> first1 = numbers.stream().sorted(Comparator.reverseOrder()).distinct().skip(1).findFirst();
+        System.out.println(first1);
     }
 
 }

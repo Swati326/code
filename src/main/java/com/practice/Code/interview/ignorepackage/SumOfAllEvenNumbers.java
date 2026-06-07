@@ -17,6 +17,7 @@ public class SumOfAllEvenNumbers {
         int sum1 = Arrays.stream(number).filter(n -> n % 2 == 0).sum();
         System.out.println(sum1);
 
+        numbers.stream().filter(n->n%2==0);
 
         // How would you sort a list of employees based on name and department when each employee has an ID, name, salary, and department?
 

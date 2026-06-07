@@ -2,6 +2,7 @@ package com.practice.Code.interview.StreamAPIProgram;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class WordWithSecondHighestLength {
@@ -10,7 +11,20 @@ public class WordWithSecondHighestLength {
 
         String s= "I am learning stream API in java";
 
-        String s1 = Arrays.stream(s.split(" ")).sorted(Comparator.comparing(String::length).reversed()).skip(1).findFirst().orElse(null);
+        String s1 = Arrays.stream(s.split(" ")).
+                sorted(Comparator.comparing(String::length).reversed()).skip(1).findFirst().orElse(null);
         System.out.println(s1);
+
+        String s2 = Arrays.stream(s.split(" "))
+                .sorted(Comparator.comparing(String::length).reversed()).skip(1).findFirst().orElse(null);
+        System.out.println(s2);
+
+        String s3 = Arrays.stream(s.split(" "))
+                .sorted(Comparator.comparing(String::length).reversed()).findFirst().orElse(null);
+        System.out.println(s3);
+
+        Optional<String> first = Arrays.stream(s.split("")).sorted(Comparator.comparing(String::length).reversed()).skip(1).findFirst();
+
+
     }
 }

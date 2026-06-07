@@ -30,6 +30,11 @@ public class DuplicateCount {
         Map<Integer, Long> collect = integerList.stream().collect(Collectors.groupingBy(i -> i, Collectors.counting())).entrySet().
                 stream().filter(entry -> entry.getValue() > 1).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
+        Map<Integer, Long> collect1 = integerList.stream().collect(Collectors.groupingBy(i -> i, Collectors.counting())).entrySet().
+                stream().filter(entry -> entry.getValue() > 1).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+
+        System.out.println(collect1);
+
         System.out.println(collect);
     }
 }

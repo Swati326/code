@@ -26,7 +26,24 @@ public class FindNonRepeatedCharcterInStringUsingStream {
                 entrySet().stream().filter(c->c.getValue()==1).map(Map.Entry::getKey).findFirst().orElse(null);
         System.out.println(charnew);
 
+        Map<Character, Long> collect = input.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(c -> c, Collectors.counting()));
         // find the length of each string in stream API
+
+
+        //////////
+        Optional<Character> first1 = input.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(c -> c, LinkedHashMap::new, Collectors.counting()))
+                .entrySet().stream().
+                filter(characterLongEntry -> characterLongEntry.getValue() == 1).map(Map.Entry::getKey).findFirst();
+
+        System.out.println("Non-repeated:"+first1);
+        /////////
+
+
+       // String input = "swiss";
+        Map.Entry<Character, Long> characterLongEntry = input.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(c -> c, Collectors.counting())).entrySet()
+                .stream().filter(e -> e.getValue() == 1).findFirst().orElse(null);
+
+        System.out.println(characterLongEntry);
 
 
     }
