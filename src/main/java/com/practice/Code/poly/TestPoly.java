@@ -31,20 +31,23 @@ public class TestPoly {
         System.out.println(finallist);
         int arr[] = {16, 17, 4, 3, 5, 2};
         int arr1[] = new int[5];
-        int c = 0;
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = i + 1; j < arr.length - 1; j++) {
-                if (arr[i] >= arr[j]) {
-                    c++;
+        int index=0;
+        for (int i = 0; i < arr.length; i++) {
+            int c = 1;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] >= arr[i]) {
+                    c=0;
+                    break;
 
                 }
             }
             if (c > 0) {
-                arr1[i] = arr[i];
+                arr1[index] = arr[i];
+                index++;
             }
         }
         for (int i = 0; i < arr1.length - 1; i++) {
-           // System.out.println(arr1[i]);
+           System.out.println(arr1[i]);
         }
 
 

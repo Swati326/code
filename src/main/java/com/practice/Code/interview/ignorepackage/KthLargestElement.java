@@ -7,7 +7,7 @@ public class KthLargestElement {
     public static void  main(String[] args) {
         int a[] = {1, 3, 4, 5, 10, 2, 14};
         Scanner sc = new Scanner(System.in); // Create Scanner object for console input
-        System.out.println("Provide Kth value:");// Prompt the user
+        System.out.println("Provide Kth value to find largest element:");// Prompt the user
         int input = sc.nextInt();
         if (input > a.length) {
             System.out.println("There is no " + input + "TH index present in array");
